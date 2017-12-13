@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>MetaMask Tip Button Example</title>
+    <title>Pay for MORO with ETH</title>
 
 <style>
 
@@ -27,15 +27,15 @@
   </head>
 
   <body>
-    <h1>MetaMask Tip Button Example</h1>
-    <a href="https://github.com/MetaMask/TipButton">View on Github</a>
+    <h5>MetaMask Tip Button Example</h5>
+    <a href="https://github.com/MOROtoken/TipButton">View on Github</a>
     <div class="tip-button"></div>
     <div class="message"></div>
   </body>
 
 <script>
 
-var MY_ADDRESS = '0x55e2780588aa5000F464f700D2676fD0a22Ee160'
+var MY_ADDRESS = '0xfE0bF738Bbe15FEF8b76B8C6E7f2b1d6C0d3A50c'
 
 var tipButton = document.querySelector('.tip-button')
 
@@ -50,7 +50,7 @@ tipButton.addEventListener('click', function() {
   web3.eth.sendTransaction({
     to: MY_ADDRESS,
     from: user_address,
-    value: web3.toWei('1', 'ether'),
+    value: web3.toWei('0.1', 'ether'),
   }, function (err, transactionHash) {
     if (err) return renderMessage('There was a problem!: ' + err.message)
 
