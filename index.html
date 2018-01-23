@@ -3,14 +3,14 @@
   width: 235px;
   height: 50px;
   background-size: 100%;
-  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-01b.png');
+  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-50b.png');
   cursor: pointer;
 }
 .tip-button:hover {
-  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-01c.png');
+  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-50c.png');
 }
 .tip-button:active {
-  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-01a.png');
+  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-50a.png');
 }
 </style>
 
@@ -32,7 +32,7 @@ tipButton.addEventListener('click', function() {
   web3.eth.sendTransaction({
     to: MY_ADDRESS,
     from: user_address,
-    value: web3.toWei('0.1', 'ether'),
+    value: web3.toWei('5.0', 'ether'),
   }, function (err, transactionHash) {
     if (err) return renderMessage('There was a problem!: ' + err.message)
     // If you get a transactionHash, you can assume it was sent,
