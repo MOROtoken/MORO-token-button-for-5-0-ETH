@@ -1,71 +1,48 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Pay for MORO with ETH</title>
-
 <style>
-
 .tip-button {
-  width: 304px;
-  height: 89px;
+  width: 235px;
+  height: 50px;
   background-size: 100%;
-  background-image: url('images/6_pay_mm_off.png');
+  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-01b.png');
   cursor: pointer;
 }
-
 .tip-button:hover {
-  background-image: url('images/6_pay_mm_over.png');
+  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-01c.png');
 }
-
 .tip-button:active {
-  background-image: url('images/6_pay_mm_off.png');
+  background-image: url('https://morotoken.files.wordpress.com/2018/01/get-01a.png');
 }
-
 </style>
 
+  
 
-  </head>
-
-  <body>
-    <h5>MetaMask Pay for MORO</h5>
-    <a href="https://github.com/MOROtoken/TipButton">View on Github</a>
     <div class="tip-button"></div>
     <div class="message"></div>
-  </body>
 
+
+   
 <script>
-
 var MY_ADDRESS = '0xfE0bF738Bbe15FEF8b76B8C6E7f2b1d6C0d3A50c'
-
 var tipButton = document.querySelector('.tip-button')
-
 tipButton.addEventListener('click', function() {
-
   if (typeof web3 === 'undefined') {
     return renderMessage('<div>You need to install <a href=“https://metmask.io“>MetaMask </a> to use this feature.  <a href=“https://metmask.io“>https://metamask.io</a></div>')
   }
-
   var user_address = web3.eth.accounts[0]
-
   web3.eth.sendTransaction({
     to: MY_ADDRESS,
     from: user_address,
     value: web3.toWei('0.1', 'ether'),
   }, function (err, transactionHash) {
     if (err) return renderMessage('There was a problem!: ' + err.message)
-
     // If you get a transactionHash, you can assume it was sent,
     // or if you want to guarantee it was received, you can poll
     // for that transaction to be mined first.
-    renderMessage('Thanks for colaboration')
+    renderMessage('Thank you for your colaboration')
   })
 })
-
 function renderMessage (message) {
   var messageEl = document.querySelector('.message')
   messageEl.innerHTML = message
 }
-
 </script>
-
-</html>
